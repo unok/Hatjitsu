@@ -154,7 +154,7 @@ function RoomCtrl($scope, $routeParams, $timeout, socket) {
           }
         });
         if ((max - min) > 2 && $scope.votes.length > (minCount + maxCount)) {
-            $scope.votingAverageWithoutMaxAndMin = {min:  $scope.cards[min], minCount: minCount, max: $scope.cards[max], maxCount: maxCount, avg: Math.round((total - $scope.cards[min] * minCount - $scope.cards[max] * maxCount) / ($scope.votes.length - minCount - maxCount))}
+            $scope.votingAverageWithoutMaxAndMin = {min:  $scope.cards[min], minCount: minCount, max: $scope.cards[max], maxCount: maxCount, avg: Math.round((total - $scope.cards[min] - $scope.cards[max]) / ($scope.votes.length - 2))}
         } else {
             $scope.votingAverageWithoutMaxAndMin = null;
         }
